@@ -1,16 +1,10 @@
-FROM node:19-alpine3.16
+FROM nginx:latest
 
-WORKDIR /react-app
+WORKDIR /app
 
-COPY package.json .
-
-COPY package-lock.json .
-
-RUN npm i
+COPY .  .
 
 
-COPY . .
+EXPOSE 8000
 
-EXPOSE 3000
-
-CMD ["npm", "start"]
+CMD ["echo", "hello world"]
